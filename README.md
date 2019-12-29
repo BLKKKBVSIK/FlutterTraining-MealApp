@@ -1,16 +1,24 @@
 # meal_app
 
-A new Flutter project.
+Meal App is a training project about:
+- Navigators
+- Grid widgets
+- And a lot more
 
-## Getting Started
+### DEMO:
 
-This project is a starting point for a Flutter application.
+WIP
 
-A few resources to get you started if this is your first Flutter project:
+### Install
+Wanna try the app ?
+See the [releases]() 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The release is Android only since i don't own an Apple Developer account.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### More of this ?
+
+This project is included in a series of Flutter written projects to learn and progress.
+
+My previous apps in Flutter:  
+[Expense App](https://github.com/BLKKKBVSIK/FlutterTraining-ExpenseApp)  
+[Quizz App](https://github.com/BLKKKBVSIK/FlutterTraining-QuizzApp)

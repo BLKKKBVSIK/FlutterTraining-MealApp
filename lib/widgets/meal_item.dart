@@ -78,7 +78,7 @@ class MealItem extends StatelessWidget {
                   ),
                   child: Image.network(
                     imageUrl,
-                    height: 250,
+                    height: (MediaQuery.of(context).size.height - AppBar().preferredSize.height - MediaQuery.of(context).padding.top) * 0.25,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -86,7 +86,7 @@ class MealItem extends StatelessWidget {
                 Positioned(
                   bottom: 20,
                   child: Container(
-                    width: 300,
+                    width: (MediaQuery.of(context).size.height - AppBar().preferredSize.height - MediaQuery.of(context).padding.top) * 0.3,
                     color: Colors.black54,
                     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     child: Text(

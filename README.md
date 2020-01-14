@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1434b5c4cb6c4c84997e174d9e81dbb9)](https://www.codacy.com/manual/BLKKKBVSIK/FlutterTraining-MealApp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BLKKKBVSIK/FlutterTraining-MealApp&amp;utm_campaign=Badge_Grade)
+
 # meal_app
 
 Meal App is a training project about:

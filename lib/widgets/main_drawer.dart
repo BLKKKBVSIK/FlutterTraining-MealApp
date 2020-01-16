@@ -1,34 +1,46 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:meal_app/screens/filters_screen.dart';
+
 
 class MainDrawer extends StatelessWidget {
   Widget buildListTile(String title, IconData icon, Function tapHandler) {
     return ListTile(
-            leading: Icon(
-              icon,
-              size: 26,
-            ),
-            title: Text(title,
-              style: TextStyle(
-                fontFamily: 'RobotoCondensed',
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: tapHandler ,
-          );
+      leading: Icon(
+        icon,
+        size: 26,
+      ),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'RobotoCondensed',
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      onTap: tapHandler,
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> aboutBoxChildren = <Widget>[
+      SizedBox(
+        height: 20,
+      ),
+      Text('GitHub: https://github.com/BLKKKBVSIK'),
+      Text('Website: https://enzoconty.dev'),
+    ];
+
     return Drawer(
       child: Column(
         children: <Widget>[
           Container(
             height: (MediaQuery.of(context).size.height -
-                      AppBar().preferredSize.height -
-                      MediaQuery.of(context).padding.top) *
-                  0.12,
+                    AppBar().preferredSize.height -
+                    MediaQuery.of(context).padding.top) *
+                0.12,
             width: double.infinity,
             padding: EdgeInsets.only(
               top: (MediaQuery.of(context).size.height -
@@ -49,9 +61,9 @@ class MainDrawer extends StatelessWidget {
           ),
           SizedBox(
             height: (MediaQuery.of(context).size.height -
-                      AppBar().preferredSize.height -
-                      MediaQuery.of(context).padding.top) *
-                  0.02,
+                    AppBar().preferredSize.height -
+                    MediaQuery.of(context).padding.top) *
+                0.02,
           ),
           buildListTile('Meals', Icons.restaurant, () {
             Navigator.of(context).pushReplacementNamed('/');
@@ -62,13 +74,36 @@ class MainDrawer extends StatelessWidget {
           Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: buildListTile('About', Icons.info_outline, () {}),
+              child: AboutListTile(
+                child: Text(
+                  'About',
+                  style: TextStyle(
+                    fontFamily: 'RobotoCondensed',
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.info,
+                ),
+                applicationIcon: Icon(
+                  Icons.local_play,
+                  size: 65,
+                  color: Theme.of(context).accentColor,
+                ),
+                applicationName: 'MealApp',
+                applicationVersion: '1.0.0',
+                applicationLegalese: 'by Enzo CONTY',
+                aboutBoxChildren: aboutBoxChildren,
+              ),
             ),
           ),
-          SizedBox(height: (MediaQuery.of(context).size.height -
-                      AppBar().preferredSize.height -
-                      MediaQuery.of(context).padding.top) *
-                  0.03,)
+          SizedBox(
+            height: (MediaQuery.of(context).size.height -
+                    AppBar().preferredSize.height -
+                    MediaQuery.of(context).padding.top) *
+                0.03,
+          )
         ],
       ),
     );

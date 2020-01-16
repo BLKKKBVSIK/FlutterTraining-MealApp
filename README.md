@@ -20,9 +20,9 @@ Meal App is a training project about:
 ### DEMO:
 
 <p float="left">
-    <img src="https://user-images.githubusercontent.com/20175372/72552765-def47000-3897-11ea-8da2-0a9d76beb73d.gif" width="15%" style="margin: 0px 25px 0px 25px;">
-    <img src="https://user-images.githubusercontent.com/20175372/72552766-def47000-3897-11ea-8c8c-a3b308c7633c.gif" width="15%" style="margin: 0px 25px 0px 25px;">
-    <img src="https://user-images.githubusercontent.com/20175372/72552767-def47000-3897-11ea-91ed-e9aa317ef8ca.gif" width="15%" style="margin: 0px 25px 0px 25px;">
+    <img src="https://user-images.githubusercontent.com/20175372/72552765-def47000-3897-11ea-8da2-0a9d76beb73d.gif" width="35%" style="margin: 0px 25px 0px 25px;">
+    <img src="https://user-images.githubusercontent.com/20175372/72552766-def47000-3897-11ea-8c8c-a3b308c7633c.gif" width="35%" style="margin: 0px 25px 0px 25px;">
+    <img src="https://user-images.githubusercontent.com/20175372/72552767-def47000-3897-11ea-91ed-e9aa317ef8ca.gif" width="35%" style="margin: 0px 25px 0px 25px;">
 </p>
 
 

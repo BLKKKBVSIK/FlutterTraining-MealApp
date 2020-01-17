@@ -27,7 +27,6 @@ class FavoritesScreen extends StatelessWidget {
         },
         itemCount: favoriteMeals.length,
       );
-    }
-    ;
+    };
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meal_app/main.dart';
 
 class FilterScreen extends StatefulWidget {
   static const routeName = '/filters';
@@ -86,7 +85,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 switchTileBuilder("Vegan", "Only display vegan meals", _vegan,
                     (newValue) {
                   setState(() {
-                    _vegan = newValue;
+                    _vegan = newValue as bool;
                   });
                 }),
                 switchTileBuilder(

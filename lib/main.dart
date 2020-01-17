@@ -88,7 +88,7 @@ class _MyAppState extends State<MyApp> {
         FilterScreen.routeName: (ctx) => FilterScreen(_setFilters, _filters),
       },
       onUnknownRoute: (settings) {
-        MaterialPageRoute(builder: (ctx) => CategorieScreen());
+        return MaterialPageRoute(builder: (BuildContext ctx) => CategorieScreen());
       },
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FilterScreen extends StatefulWidget {
-  static const routeName = '/filters';
+  static const String routeName = '/filters';
 
   final Function saveFilters;
   final Map<String, bool> filters;
@@ -19,7 +19,7 @@ class _FilterScreenState extends State<FilterScreen> {
   bool _lactoseFree = false;
 
   @override
-  initState() {
+  void initState() {
     _glutenFree = widget.filters['gluten'];
     _vegetarian = widget.filters['vegetarian'];
     _vegan = widget.filters['vegan'];
@@ -33,7 +33,7 @@ class _FilterScreenState extends State<FilterScreen> {
       title: Text(title),
       value: currentValue,
       subtitle: Text(subtitle),
-      onChanged: updateValue,
+      onChanged: (_) => updateValue,
     );
   }
 
@@ -41,13 +41,13 @@ class _FilterScreenState extends State<FilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Filters'),
+        title: const Text('Filters'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.save),
         onPressed: () {
-          final selectedFilters = {
+          final Map<String, bool> selectedFilters = <String, bool> {
             'gluten': _glutenFree,
             'vegetarian': _vegetarian,
             'vegan': _vegan,
@@ -60,40 +60,40 @@ class _FilterScreenState extends State<FilterScreen> {
       body: Column(
         children: <Widget>[
           Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Text(
-              "Adjust your displayed meals",
+              'Adjust your displayed meals',
               style: Theme.of(context).textTheme.title,
             ),
           ),
           Expanded(
             child: ListView(
               children: <Widget>[
-                switchTileBuilder("Gluten free",
-                    "Only display gluten-free meals", _glutenFree, (newValue) {
+                switchTileBuilder('Gluten free',
+                    'Only display gluten-free meals', _glutenFree, (dynamic newValue) {
                   setState(() {
-                    _glutenFree = newValue;
+                    _glutenFree = newValue as bool;
                   });
                 }),
                 switchTileBuilder(
-                    "Vegetarian", "Only display vegetarian meals", _vegetarian,
-                    (newValue) {
+                    'Vegetarian', 'Only display vegetarian meals', _vegetarian, (dynamic newValue) {
                   setState(() {
-                    _vegetarian = newValue;
+                    _vegetarian = newValue as bool;
                   });
                 }),
-                switchTileBuilder("Vegan", "Only display vegan meals", _vegan,
-                    (newValue) {
+                switchTileBuilder('Vegan', 'Only display vegan meals', _vegan,
+                    (dynamic newValue) {
                   setState(() {
                     _vegan = newValue as bool;
                   });
                 }),
                 switchTileBuilder(
-                    "Lactose free",
-                    "Only display lactose-free meals",
-                    _lactoseFree, (newValue) {
+                    'Lactose free',
+                    'Only display lactose-free meals',
+                    _lactoseFree, 
+                    (dynamic newValue) {
                   setState(() {
-                    _lactoseFree = newValue;
+                    _lactoseFree = newValue as bool;
                   });
                 }),
               ],

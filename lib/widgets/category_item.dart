@@ -11,7 +11,7 @@ class CategoryItem extends StatelessWidget {
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
       CategoryMealsScreen.routeName,
-      arguments: {'id': id, 'title': title},
+      arguments: <String, String> {'id': id, 'title': title},
     );
   }
 
@@ -29,7 +29,7 @@ class CategoryItem extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              colors: [color.withOpacity(0.7), color],
+              colors: <Color> [color.withOpacity(0.7), color],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight),
           borderRadius: BorderRadius.circular(15),

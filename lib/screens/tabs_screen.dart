@@ -19,7 +19,8 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   void initState() {
-    _pages = [
+    _pages =
+    [
       {'page': CategorieScreen(), 'title': 'Categories'},
       {'page': FavoritesScreen(widget.favoriteMeals), 'title': 'Favorites'},
     ];
@@ -47,7 +48,7 @@ class _TabsScreenState extends State<TabsScreen> {
         selectedItemColor: Colors.white,
         currentIndex: _selectedPageIndex,
         type: BottomNavigationBarType.shifting,
-        items: [
+        items: <BottomNavigationBarItem> [
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.fastfood),

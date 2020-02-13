@@ -66,13 +66,13 @@ class MealItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         elevation: 4,
-        margin: EdgeInsets.all(10),
+        margin: const EdgeInsets.all(10),
         child: Column(
           children: <Widget>[
             Stack(
               children: <Widget>[
                 ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(15),
                     topRight: Radius.circular(15),
                   ),
@@ -88,7 +88,7 @@ class MealItem extends StatelessWidget {
                   child: Container(
                     width: (MediaQuery.of(context).size.height - AppBar().preferredSize.height - MediaQuery.of(context).padding.top) * 0.3,
                     color: Colors.black54,
-                    padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                     child: Text(
                       title,
                       style: TextStyle(fontSize: 26, color: Colors.white),
@@ -107,7 +107,7 @@ class MealItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(Icons.schedule),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       Text('$duration min'),
@@ -116,7 +116,7 @@ class MealItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(Icons.work),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       Text(complexityText),
@@ -125,7 +125,7 @@ class MealItem extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(Icons.attach_money),
-                      SizedBox(
+                      const SizedBox(
                         width: 6,
                       ),
                       Text(affordabilityText),

@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Map<String, bool> _filters = {
+  Map<String, bool> _filters = <String, bool> {
     'gluten': false,
     'vegetarian': false,
     'vegan': false,
@@ -23,13 +23,13 @@ class _MyAppState extends State<MyApp> {
   };
 
   List<Meal> _availableMeals = DUMMY_MEALS;
-  List<Meal> _favoriteMeals = [];
+  final List<Meal> _favoriteMeals = <Meal> [];
 
   void _setFilters(Map<String, bool> filtersData) {
     setState(() {
       _filters = filtersData;
 
-      _availableMeals = DUMMY_MEALS.where((meal) {
+      _availableMeals = DUMMY_MEALS.where((Meal meal) {
         if (_filters['gluten'] && !meal.isGlutenFree) {
           return false;
         }
@@ -48,19 +48,19 @@ class _MyAppState extends State<MyApp> {
   }
 
   bool _isMealFavorite(String mealId) {
-    return _favoriteMeals.any((meal) => meal.id == mealId);
+    return _favoriteMeals.any((Meal meal) => meal.id == mealId);
   }
 
   void _toggleFavorite(String mealId) {
-    final existingIndex =
-        _favoriteMeals.indexWhere((meal) => meal.id == mealId);
+    final int existingIndex =
+        _favoriteMeals.indexWhere((Meal meal) => meal.id == mealId);
     if (existingIndex >= 0) {
       setState(() {
         _favoriteMeals.removeAt(existingIndex);
       });
     } else {
       setState(() {
-        _favoriteMeals.add(DUMMY_MEALS.firstWhere((meal) => meal.id == mealId));
+        _favoriteMeals.add(DUMMY_MEALS.firstWhere((Meal meal) => meal.id == mealId));
       });
     }
   }
@@ -71,25 +71,24 @@ class _MyAppState extends State<MyApp> {
       title: 'DeliMeals',
       theme: ThemeData(
           primarySwatch: Colors.blue,
-          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           fontFamily: 'Raleway',
           textTheme: ThemeData.light().textTheme.copyWith(
-              body1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              body2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-              title: TextStyle(
+              body1: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              body2: const TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
+              title: const TextStyle(
                 fontSize: 20,
                 fontFamily: 'RobotoCondensed',
               ))),
       home: TabsScreen(_favoriteMeals),
       routes: {
-        CategoryMealsScreen.routeName: (ctx) =>
-            CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
-        FilterScreen.routeName: (ctx) => FilterScreen(_setFilters, _filters),
+        CategoryMealsScreen.routeName: (BuildContext ctx) => CategoryMealsScreen(_availableMeals),
+        MealDetailScreen.routeName: (BuildContext ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
+        FilterScreen.routeName: (BuildContext ctx) => FilterScreen(_setFilters, _filters),
       },
-      onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (BuildContext ctx) => CategorieScreen());
+      onUnknownRoute: (RouteSettings settings) {
+        return MaterialPageRoute<void>(builder: (BuildContext ctx) => CategorieScreen());
       },
-    );
+    ); 
   }
 }

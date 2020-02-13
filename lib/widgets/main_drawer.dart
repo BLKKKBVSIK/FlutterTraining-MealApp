@@ -17,18 +17,18 @@ class MainDrawer extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: tapHandler,
+      onTap: () => tapHandler(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> aboutBoxChildren = <Widget>[
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
-      Text('GitHub: https://github.com/BLKKKBVSIK'),
-      Text('Website: https://enzoconty.dev'),
+      const Text('GitHub: https://github.com/BLKKKBVSIK'),
+      const Text('Website: https://enzoconty.dev'),
     ];
 
     return Drawer(

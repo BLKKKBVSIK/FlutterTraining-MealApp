@@ -4,7 +4,7 @@ import 'package:meal_app/widgets/meal_item.dart';
 
 class CategoryMealsScreen extends StatefulWidget {
 
-  static const routeName = '/category-meal';
+  static const String routeName = '/category-meal';
 
   final List<Meal> availableMeal;
 
@@ -17,11 +17,11 @@ class CategoryMealsScreen extends StatefulWidget {
 class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   @override
   Widget build(BuildContext context) {
-    final routeArgs =
+    final Map<String, String> routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
-    final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id'];
-    final categoryMeals = widget.availableMeal.where((meal) {
+    final String categoryTitle = routeArgs['title'];
+    final String categoryId = routeArgs['id'];
+    final List<Meal> categoryMeals = widget.availableMeal.where((Meal meal) {
       return meal.categories.contains(categoryId);
     }).toList();
     return Scaffold(
@@ -29,7 +29,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
         title: Text(categoryTitle),
       ),
       body: ListView.builder(
-        itemBuilder: (ctx, index) {
+        itemBuilder: (BuildContext ctx, int index) {
           return MealItem(
             id: categoryMeals[index].id,
             title: categoryMeals[index].title,
